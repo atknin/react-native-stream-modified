@@ -9,5 +9,6 @@ export default {
   start: () => MicrophoneStream.start(),
   pause: () => MicrophoneStream.pause(),
   stop: () => MicrophoneStream.stop(),
+  getRoute: (obj) => MicrophoneStream.getRoute(obj),
   addListener: listener => emitter.addListener('audioData', listener),
 };

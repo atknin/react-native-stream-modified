@@ -12,6 +12,7 @@ declare module 'react-native-microphone-stream' {
     start: () => void;
     pause: () => void;
     stop: () => void;
+    getRoute?: (obj: Object) => Object;
   };
 
   export default RNMicrophoneStream;
