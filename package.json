@@ -1,0 +1,42 @@
+{
+  "name": "react-native-microphone-stream",
+  "version": "1.0.2",
+  "description": "React Native module for audio input data streaming",
+  "author": "Mark Elphinstone <mark@oxfordsourceltd.com> (https://github.com/marksyzm)",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Qiu Xiang",
+      "email": "i@7c00.cc"
+    },
+    {
+      "name": "Chad Smith",
+      "email": "chad@developer.email"
+    },
+    {
+      "name": "Mohamed Moussa",
+      "email": "chad@developer.email"
+    }
+  ],
+  "keywords": [
+    "react-native",
+    "audio-recording",
+    "recording",
+    "microphone"
+  ],
+  "homepage": "https://github.com/marksyzm/react-native-microphone-stream",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marksyzm/react-native-microphone-stream.git"
+  },
+  "main": "MicrophoneStream.js",
+  "peerDependencies": {
+    "react-native": ">=0.47"
+  },
+  "devDependencies": {
+    "eslint": "1.10.3",
+    "babel-eslint": "5.0.0-beta8",
+    "eslint-plugin-react": "3.16.1",
+    "eslint-config-airbnb": "4.0.0"
+  }
+}
