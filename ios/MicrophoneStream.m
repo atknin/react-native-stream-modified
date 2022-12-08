@@ -25,8 +25,9 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
     // _category = [session category];
-    [session setActive:false error:nil];
+    [session setActive:true error:nil];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord
 //                   error:nil];
     _mode = [session mode];
@@ -52,8 +53,9 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
 
 RCT_EXPORT_METHOD(start) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setActive:false error:nil];
+    [session setActive:true error:nil];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord
 //                   error:nil];
     AudioQueueStart(_queue, NULL);
@@ -65,8 +67,9 @@ RCT_EXPORT_METHOD(pause) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
     // [session setCategory:_category
     //                error:nil];
-    [session setActive:false error:nil];
+    [session setActive:true error:nil];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord
 //                   error:nil];
     [session setMode:_mode
@@ -77,8 +80,9 @@ RCT_EXPORT_METHOD(stop) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
     // [session setCategory:_category
     //                error:nil];
-    [session setActive:false error:nil];
+    [session setActive:true error:nil];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord
 //                   error:nil];
     [session setMode:_mode
