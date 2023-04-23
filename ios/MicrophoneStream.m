@@ -23,15 +23,15 @@ void inputCallback(
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
-    
+
     AVAudioSession *session = [AVAudioSession sharedInstance];
     // _category = [session category];
-//    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
-    
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
-    
+    //    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
+
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
+
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:[session categoryOptions]|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
-    
+
 //    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 //    [session overrideOutputAudioPort:AVAudioSessionPortOverrideNone error:nil];
 //    [session setPreferredInput:[session.availableInputs firstObject] error:nil];
@@ -61,16 +61,16 @@ RCT_EXPORT_METHOD(init:(NSDictionary *) options) {
 RCT_EXPORT_METHOD(start) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
 //    for (NSObject *obj in session.outputDataSources) {
-        
+
 //    }
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionAllowBluetooth error:nil];
-    
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
-    
+
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
+
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:[session categoryOptions]|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
-    
+
 //    [session setActive:true error:nil];
-    
+
     NSLog(@"obj2: %@", [session currentRoute]);
     NSLog(@"obj22: %@", session.availableInputs);
 //    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
@@ -80,7 +80,7 @@ RCT_EXPORT_METHOD(start) {
 //    for (NSObject *obj in session.availableInputs) {
 //        NSLog(@"obj: %@", obj);
 //    }
-    
+
 //    [session setActive:true error:nil];
     AudioQueueStart(_queue, NULL);
 }
@@ -88,7 +88,7 @@ RCT_EXPORT_METHOD(start) {
 RCT_EXPORT_METHOD(getRoute:(RCTResponseSenderBlock)callback)
 {
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    
+
     NSLog(@"obj2: %@", [session currentRoute]);
     callback([session currentRoute]);
 }
@@ -108,7 +108,7 @@ RCT_EXPORT_METHOD(pause) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
     // [session setCategory:_category
     //                error:nil];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
 //    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 //    [session overrideOutputAudioPort:AVAudioSessionPortOverrideNone error:nil];
 //    [session setPreferredInput:[session.availableInputs firstObject] error:nil];
@@ -122,10 +122,10 @@ RCT_EXPORT_METHOD(stop) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
     // [session setCategory:_category
     //                error:nil];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionAllowBluetoothA2DP|AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
 //    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 //    [session overrideOutputAudioPort:AVAudioSessionPortOverrideNone error:nil];
-    
+
 //    [session setPreferredInput:[session.availableInputs firstObject] error:nil];
 //    NSLog(@"obj: %", [session.availableInputs firstObject]);
 //    [session setActive:true error:nil];
